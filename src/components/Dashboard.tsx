@@ -34,6 +34,9 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('notes');
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const cn = (...classes: (string | boolean | undefined)[]) => classes.filter(Boolean).join(' ');
 
   useEffect(() => {
     if (!user) return;
@@ -155,29 +158,53 @@ export default function Dashboard() {
       />
       <Sidebar 
         activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
+        setActiveTab={(tab) => {
+          setActiveTab(tab);
+          setIsSidebarOpen(false);
+        }} 
         onNewNote={handleCreateNote}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
       />
 
       {/* Main Content Area */}
-      <div className="flex-1 flex overflow-hidden pr-6 py-8">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden lg:pr-6 lg:py-8">
+        {/* Mobile Header */}
+        <div className="lg:hidden flex items-center justify-between p-4 border-b border-white/5 bg-[#0A0A0A] z-20">
+          <button 
+            onClick={() => setIsSidebarOpen(true)}
+            className="p-2 -ml-2 text-white/40 hover:text-white"
+          >
+            <div className="w-5 h-4 flex flex-col justify-between">
+              <span className="w-full h-0.5 bg-current rounded-full" />
+              <span className="w-full h-0.5 bg-current rounded-full" />
+              <span className="w-full h-0.5 bg-current rounded-full" />
+            </div>
+          </button>
+          <Logo />
+          <div className="w-10" /> {/* Spacer */}
+        </div>
+
         {activeTab === 'notes' && (
-          <div className="flex-1 flex gap-6 overflow-hidden">
+          <div className="flex-1 flex gap-6 overflow-hidden relative">
             {/* Note List Rails */}
-            <div className="w-80 flex flex-col bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden backdrop-blur-xl">
-              <div className="p-6 border-b border-white/5 bg-white/[0.01]">
+            <div className={cn(
+              "absolute inset-0 lg:relative lg:w-80 flex flex-col bg-white/5 lg:border border-white/10 lg:rounded-[2rem] overflow-hidden backdrop-blur-xl z-10 transition-transform duration-300",
+              activeNoteId ? "-translate-x-full lg:translate-x-0" : "translate-x-0"
+            )}>
+              <div className="p-6 border-b border-white/10 bg-white/[0.01]">
                 <h1 className="text-xl font-bold tracking-tight mb-0.5">Workspace</h1>
                 <p className="text-[11px] text-white/30 font-medium tracking-wide">
                   {filteredNotes.length} Document{filteredNotes.length !== 1 ? 's' : ''}
                 </p>
               </div>
               
-              <div className="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-1.5">
+              <div className={`flex-1 ${filteredNotes.length > 0 ? 'overflow-y-auto custom-scrollbar' : 'overflow-hidden'} p-3 space-y-1.5`}>
                 {filteredNotes.length === 0 ? (
-                  <div className="h-full flex flex-col items-center justify-center opacity-20 px-6 text-center mt-20">
-                    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-4 border border-white/5">
+                  <div className="h-full flex flex-col items-center justify-center opacity-20 px-6 text-center">
+                    <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
                       <SearchX className="w-6 h-6 text-white/40" />
                     </div>
                     <p className="text-xs font-medium">No results found</p>
@@ -190,7 +217,7 @@ export default function Dashboard() {
                       className={`w-full text-left p-4 rounded-2xl transition-all border ${
                         activeNoteId === note.id 
                         ? 'bg-white/[0.06] border-white/10 shadow-lg' 
-                        : 'bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/5'
+                        : 'bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/10'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -225,7 +252,10 @@ export default function Dashboard() {
             </div>
 
             {/* Main Editor View */}
-            <div className="flex-1 bg-white/[0.01] border border-white/5 rounded-3xl overflow-hidden backdrop-blur-xl relative">
+            <div className={cn(
+              "absolute inset-0 lg:relative flex-1 bg-white/5 lg:border border-white/10 lg:rounded-[2rem] overflow-hidden backdrop-blur-xl transition-transform duration-300",
+              activeNoteId ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+            )}>
               <AnimatePresence mode="wait">
                 {activeNote ? (
                   <motion.div
@@ -268,7 +298,7 @@ export default function Dashboard() {
 
         {/* AI Insights Board */}
         {activeTab === 'insights' && (
-          <div className="flex-1 bento-card p-10 overflow-y-auto custom-scrollbar">
+          <div className="flex-1 bento-card p-4 md:p-12 overflow-y-auto custom-scrollbar">
             <header className="mb-10">
               <h1 className="text-2xl font-bold tracking-tight mb-1">AI Summaries</h1>
               <p className="text-white/30 text-sm font-medium">Consolidated intelligence across your workspace.</p>
@@ -308,7 +338,6 @@ export default function Dashboard() {
           </div>
         )}
       </div>
-      <Toaster position="bottom-right" />
     </div>
   );
 }

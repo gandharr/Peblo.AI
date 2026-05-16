@@ -82,8 +82,8 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
   return (
     <div className="flex flex-col h-full bg-transparent" id={`editor-${note.id}`}>
       {/* Header */}
-      <header className="px-8 py-4 border-b border-white/5 flex items-center justify-between bg-white/[0.01]">
-        <div className="flex items-center gap-4">
+      <header className="px-4 md:px-8 py-3 md:py-4 border-b border-white/5 flex items-center justify-between bg-white/[0.01]">
+        <div className="flex items-center gap-3 md:gap-4 truncate mr-2">
           <button 
             onClick={onClose}
             className="p-2 hover:bg-white/5 rounded-lg transition-colors text-white/40 lg:hidden"
@@ -91,8 +91,8 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div className="flex items-center gap-2 text-white/20 text-[11px] font-medium tracking-tight">
-            <Clock className="w-3.5 h-3.5" shapeRendering="geometricPrecision" />
-            <span>Last sync {note.updatedAt ? format(note.updatedAt.toDate(), 'h:mm a') : 'Now'}</span>
+            <Clock className="w-3.5 h-3.5 flex-shrink-0" shapeRendering="geometricPrecision" />
+            <span className="truncate">Last sync {note.updatedAt ? format(note.updatedAt.toDate(), 'h:mm a') : 'Now'}</span>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -100,7 +100,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
             onClick={() => onGenerateAI(note.id)}
             disabled={isGenerating}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-tight transition-all shadow-xl",
+              "flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-tight transition-all shadow-xl whitespace-nowrap",
               isGenerating 
                 ? "bg-white/5 text-white/20 cursor-not-allowed" 
                 : "bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95"
@@ -156,7 +156,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
       {/* Content Area */}
       <main className="flex-1 overflow-hidden flex flex-col lg:flex-row">
         {/* Main Editor */}
-        <div className="flex-1 overflow-y-auto p-12 lg:pr-6 custom-scrollbar h-full bg-white/[0.01]">
+        <div className="flex-1 overflow-y-auto p-6 md:p-12 lg:pr-6 custom-scrollbar h-full bg-white/[0.01]">
           <div className="max-w-3xl mx-auto">
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-8">
@@ -189,7 +189,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
               value={localTitle}
               onChange={(e) => setLocalTitle(e.target.value)}
               placeholder="Document Title"
-              className="w-full text-4xl font-bold text-white border-none outline-none resize-none placeholder:text-white/5 mb-8 overflow-hidden tracking-tight leading-tight"
+              className="w-full text-3xl md:text-4xl font-bold text-white border-none outline-none resize-none placeholder:text-white/5 mb-8 overflow-hidden tracking-tight leading-tight"
               rows={1}
               style={{ minHeight: '3rem' }}
               id="editor-title"
@@ -233,7 +233,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
-              className="lg:w-[450px] border-l border-white/5 p-12 overflow-y-auto bg-white/[0.01]"
+              className="w-full lg:w-[450px] border-t lg:border-t-0 lg:border-l border-white/5 p-6 md:p-12 overflow-y-auto bg-white/[0.01]"
               id="ai-insights-panel"
             >
               <div className="flex items-center gap-2 mb-10 text-indigo-400">

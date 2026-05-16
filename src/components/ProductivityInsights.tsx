@@ -43,9 +43,9 @@ export default function ProductivityInsights({ notes }: { notes: Note[] }) {
   }, [notes]);
 
   return (
-    <div className="p-12 h-screen overflow-y-auto custom-scrollbar bg-transparent" id="insights-dashboard">
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-1 text-white">Registry Metrics</h1>
+    <div className="p-6 md:p-12 h-screen overflow-y-auto custom-scrollbar bg-transparent" id="insights-dashboard">
+      <header className="mb-10 text-center md:text-left">
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 text-white">Registry Metrics</h1>
         <p className="text-white/30 text-sm font-medium">Visualizing workspace output and intelligence trends.</p>
       </header>
 

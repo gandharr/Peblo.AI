@@ -21,6 +21,8 @@ interface SidebarProps {
   onNewNote: () => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export default function Sidebar({ 
@@ -28,7 +30,9 @@ export default function Sidebar({
   setActiveTab, 
   onNewNote, 
   searchQuery, 
-  setSearchQuery
+  setSearchQuery,
+  isOpen,
+  onClose
 }: SidebarProps) {
   const { user, logout } = useAuth();
 
@@ -39,12 +43,34 @@ export default function Sidebar({
   ];
 
   return (
-    <div className="w-80 h-screen flex flex-col bg-transparent overflow-hidden p-6" id="sidebar">
-      <div className="flex flex-col h-full bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden backdrop-blur-md">
-        <div className="p-6 pb-4">
-          <div className="flex items-center gap-3 mb-10">
-            <Logo />
-          </div>
+    <>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[50] lg:hidden"
+          />
+        )}
+      </AnimatePresence>
+
+      <div className={`
+        fixed inset-y-0 left-0 w-80 max-w-[80vw] lg:relative lg:w-80 h-screen flex flex-col bg-transparent overflow-hidden p-6 z-[60] transition-transform duration-300 lg:translate-x-0
+        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `} id="sidebar">
+        <div className="flex flex-col h-full bg-[#0A0A0A] lg:bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden backdrop-blur-md">
+          <div className="p-6 pb-4">
+            <div className="flex items-center justify-between mb-10">
+              <Logo />
+              <button 
+                onClick={onClose}
+                className="lg:hidden p-2 -mr-2 text-white/20 hover:text-white"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
           <button
             onClick={onNewNote}
@@ -112,5 +138,6 @@ export default function Sidebar({
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -13,7 +13,7 @@ export default function AuthPrompt() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-md w-full bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-white/10 p-12 text-center shadow-2xl relative z-10"
+        className="w-full max-w-md bg-white/5 backdrop-blur-2xl rounded-[2.5rem] md:rounded-[3rem] border border-white/10 p-8 md:p-12 text-center shadow-2xl relative z-10"
         id="auth-modal"
       >
         <div className="mb-10 flex justify-center">
