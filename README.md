@@ -48,7 +48,8 @@ Core use cases:
 The following screenshots are provided at equal sizes for presentation and documentation. Each image is centered and scaled to the same aspect ratio to ensure consistent display across README renderers.
 
 ### Auth / Landing
-![Auth Page](public/screenshots/auth.svg)
+![Auth Page]<img width="1922" height="900" alt="Screenshot 2026-05-17 002443" src="https://github.com/user-attachments/assets/98e5487e-af9d-401c-a07b-46a662ef6ddd" />
+
 *The auth modal: large Peblo wordmark with a blue dot, center-aligned CTA.*
 
 ### Workspace Overview
