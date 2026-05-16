@@ -20,6 +20,24 @@
 
 ---
 
+## 📸 Screenshots
+
+> **Note**: These are high-fidelity mockups representing the core UI experience.
+
+### 1. The Workspace
+![Workspace Dashboard](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
+*A minimalist dashboard designed for focus and clarity.*
+
+### 2. AI-Powered Insights
+![Intelligence Panel](https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
+*Real-time analysis and summary extraction side-by-side with your editor.*
+
+### 3. Productivity Metrics
+![Analytics Dashboard](https://images.unsplash.com/photo-1551288049-bbbda5366391?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
+*Visualizing your weekly output and intelligence trends.*
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 19, TypeScript, Vite
