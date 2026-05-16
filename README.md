@@ -48,16 +48,18 @@ Core use cases:
 The following screenshots are provided at equal sizes for presentation and documentation. Each image is centered and scaled to the same aspect ratio to ensure consistent display across README renderers.
 
 ### Auth / Landing
-![Auth Page]<img width="1922" height="900" alt="Screenshot 2026-05-17 002443" src="https://github.com/user-attachments/assets/98e5487e-af9d-401c-a07b-46a662ef6ddd" />
+<img width="1922" height="900" alt="Screenshot 2026-05-17 002443" src="https://github.com/user-attachments/assets/98e5487e-af9d-401c-a07b-46a662ef6ddd" />
 
 *The auth modal: large Peblo wordmark with a blue dot, center-aligned CTA.*
 
 ### Workspace Overview
-![Workspace](public/screenshots/workspace.svg)
+<img width="1921" height="901" alt="Screenshot 2026-05-17 002524" src="https://github.com/user-attachments/assets/5e1e3864-e7b5-4832-abff-ba319ce15834" />
+
 *Three-column workspace: sidebar, notes list, and editor pane.*
 
 ### Intelligence Panel
-![Intelligence](public/screenshots/intelligence.svg)
+<img width="1923" height="898" alt="Screenshot 2026-05-17 002550" src="https://github.com/user-attachments/assets/9399fca8-be23-487f-a47f-cd1fda108322" />
+
 *AI-powered insights and extracted summary shown beside the editor.*
 
 ---
