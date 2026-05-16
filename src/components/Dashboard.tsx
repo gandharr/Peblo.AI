@@ -77,6 +77,7 @@ export default function Dashboard() {
       return a.title.localeCompare(b.title);
     });
   }, [notes, searchQuery]);
+  }, [notes, searchQuery, filterArchived, sortBy]);
 
   const activeNote = useMemo(() => 
     notes.find(n => n.id === activeNoteId) || null
@@ -177,6 +178,10 @@ export default function Dashboard() {
         setSearchQuery={setSearchQuery}
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
+        filterArchived={filterArchived}
+        setFilterArchived={setFilterArchived}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
       />
 
       {/* Main Content Area */}
