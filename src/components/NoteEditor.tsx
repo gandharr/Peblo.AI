@@ -40,7 +40,6 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
   const [localTags, setLocalTags] = useState<string[]>(note.tags || []);
   const [tagInput, setTagInput] = useState('');
   const [previewMode, setPreviewMode] = useState(false);
-  const [savingStatus, setSavingStatus] = useState<'idle'|'saving'|'saved'|'error'>('idle');
   const saveTimeout = useRef<NodeJS.Timeout|null>(null);
 
   useEffect(() => {
@@ -54,16 +53,11 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
     
     saveTimeout.current = setTimeout(() => {
       if (localTitle !== note.title || localContent !== note.content || JSON.stringify(localTags) !== JSON.stringify(note.tags)) {
-        setSavingStatus('saving');
-        const result = Promise.resolve(onSave({ 
+        onSave({ 
           title: localTitle, 
           content: localContent,
           tags: localTags
-        }));
-        result.then(() => {
-          setSavingStatus('saved');
-          setTimeout(() => setSavingStatus('idle'), 1200);
-        }).catch(() => setSavingStatus('error'));
+        });
       }
     }, 1000);
 
@@ -150,20 +144,6 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
               {note.isPublic && <ExternalLink className="w-3 h-3" />}
             </button>
             <button
-              onClick={() => {
-                const isArchived = !note.isArchived;
-                setSavingStatus('saving');
-                Promise.resolve(onSave({ isArchived })).then(() => {
-                  setSavingStatus('saved');
-                  setTimeout(() => setSavingStatus('idle'), 1200);
-                }).catch(() => setSavingStatus('error'));
-              }}
-              className={cn("p-2 rounded-lg transition-all text-white/20 hover:text-white/40")}
-              title={note.isArchived ? 'Unarchive' : 'Archive'}
-            >
-              <Archive className="w-4 h-4" />
-            </button>
-            <button
               onClick={() => onDelete(note.id)}
               className="p-2 rounded-lg hover:bg-red-500/10 text-white/20 hover:text-red-400 transition-all"
               title="Delete"
@@ -174,14 +154,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
         </div>
       </header>
 
-      {/* Autosave indicator */}
-      <div className="px-4 md:px-8 mt-1">
-        <div className="text-[11px] text-white/30">
-          {savingStatus === 'saving' && 'Saving...'}
-          {savingStatus === 'saved' && 'All changes saved'}
-          {savingStatus === 'error' && 'Save failed'}
-        </div>
-      </div>
+      
 
       {/* Content Area */}
       <main className="flex-1 overflow-hidden flex flex-col lg:flex-row">

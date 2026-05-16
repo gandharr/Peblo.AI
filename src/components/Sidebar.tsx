@@ -23,10 +23,6 @@ interface SidebarProps {
   setSearchQuery: (query: string) => void;
   isOpen: boolean;
   onClose: () => void;
-  filterArchived?: 'all'|'active'|'archived';
-  setFilterArchived?: (v: 'all'|'active'|'archived') => void;
-  sortBy?: 'updatedAt'|'title';
-  setSortBy?: (v: 'updatedAt'|'title') => void;
 }
 
 export default function Sidebar({ 
@@ -94,37 +90,6 @@ export default function Sidebar({
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-white/5 border border-white/5 focus:border-white/10 focus:bg-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-white placeholder-white/20 outline-none transition-all"
             />
-          </div>
-
-          {/* Filters */}
-          <div className="flex items-center gap-2 mb-6">
-            <button
-              onClick={() => setFilterArchived?.('all')}
-              className={`px-3 py-1 rounded-xl text-xs font-medium ${filterArchived === 'all' ? 'bg-indigo-600 text-white' : 'text-white/40 hover:bg-white/5'}`}>
-              All
-            </button>
-            <button
-              onClick={() => setFilterArchived?.('active')}
-              className={`px-3 py-1 rounded-xl text-xs font-medium ${filterArchived === 'active' ? 'bg-indigo-600 text-white' : 'text-white/40 hover:bg-white/5'}`}>
-              Active
-            </button>
-            <button
-              onClick={() => setFilterArchived?.('archived')}
-              className={`px-3 py-1 rounded-xl text-xs font-medium ${filterArchived === 'archived' ? 'bg-indigo-600 text-white' : 'text-white/40 hover:bg-white/5'}`}>
-              Archived
-            </button>
-          </div>
-
-          <div className="flex items-center gap-2 mb-6">
-            <label className="text-[11px] text-white/40">Sort:</label>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy?.(e.target.value as 'updatedAt'|'title')}
-              className="bg-transparent border border-white/5 text-white/40 rounded-xl py-1 px-2 text-sm"
-            >
-              <option value="updatedAt">Recently Updated</option>
-              <option value="title">Title</option>
-            </select>
           </div>
 
           <nav className="space-y-1">
