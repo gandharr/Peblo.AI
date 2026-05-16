@@ -76,7 +76,6 @@ export default function Dashboard() {
       }
       return a.title.localeCompare(b.title);
     });
-  }, [notes, searchQuery]);
   }, [notes, searchQuery, filterArchived, sortBy]);
 
   const activeNote = useMemo(() => 
