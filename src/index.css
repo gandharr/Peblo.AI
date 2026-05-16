@@ -52,33 +52,26 @@
     background: rgba(0,0,0,0.5);
   }
 
-  /* Inverse: light thumb for dark backgrounds */
+  /* Inverse: use the same dark scroller appearance as default */
   .custom-scrollbar-inverse {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.12) rgba(255,255,255,0.02);
+    scrollbar-color: rgba(0,0,0,0.35) rgba(0,0,0,0.06);
   }
 
   .custom-scrollbar-inverse::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.03);
+    background: rgba(0,0,0,0.06);
     border-radius: 9999px;
   }
 
   .custom-scrollbar-inverse::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(230,230,230,0.9));
+    background: rgba(0,0,0,0.35);
     border-radius: 9999px;
     border: 2px solid rgba(0,0,0,0);
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.12), inset 0 -2px 0 rgba(0,0,0,0.25);
-    transition: background-color .12s, transform .08s;
+    transition: background-color .15s;
   }
 
   .custom-scrollbar-inverse::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgba(255,255,255,1), rgba(240,240,240,0.95));
-    transform: translateX(0);
-  }
-
-  .custom-scrollbar-inverse {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(230,230,230,0.9) rgba(255,255,255,0.03);
+    background: rgba(0,0,0,0.5);
   }
 }
 
