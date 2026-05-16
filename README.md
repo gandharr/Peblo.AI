@@ -1,4 +1,4 @@
-# Peblo AI — Professional README
+# Peblo AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![React](https://img.shields.io/badge/React-19.0-blue)](https://reactjs.org/) [![Firebase](https://img.shields.io/badge/Firebase-12.0-orange)](https://firebase.google.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-cyan)](https://tailwindcss.com/)
 
@@ -135,11 +135,3 @@ Please run `npm run build` locally and ensure no TypeScript or lint errors befor
 
 This project is licensed under the MIT License. See `LICENSE` for details.
 
----
-
-If you'd like I can:
-- Replace the placeholder screenshots with production screenshots you provide
-- Adjust the headings, typography, or add a live demo badge linking to your Pages site
-- Commit and push these changes and open a Pull Request
-
-Thank you — let me know which next step you want. 
