@@ -135,11 +135,3 @@ Please run `npm run build` locally and ensure no TypeScript or lint errors befor
 
 This project is licensed under the MIT License. See `LICENSE` for details.
 
----
-
-If you'd like I can:
-- Replace the placeholder screenshots with production screenshots you provide
-- Adjust the headings, typography, or add a live demo badge linking to your Pages site
-- Commit and push these changes and open a Pull Request
-
-Thank you — let me know which next step you want. 
