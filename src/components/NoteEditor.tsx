@@ -120,8 +120,9 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
                 onSave({ isPublic });
                 
                 if (isPublic) {
-                  const url = `${window.location.origin}?share=${note.id}`;
-                  navigator.clipboard.writeText(url);
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('share', note.id);
+                  navigator.clipboard.writeText(url.toString());
                   toast.success('Public link copied to clipboard', {
                     style: {
                       background: '#1e1b4b',
