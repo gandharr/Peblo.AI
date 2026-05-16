@@ -234,7 +234,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
-              className="w-full lg:w-[450px] border-t lg:border-t-0 lg:border-l border-white/5 p-6 md:p-12 overflow-y-auto bg-white/[0.01]"
+              className="w-full lg:w-[450px] border-t lg:border-t-0 lg:border-l border-white/5 p-6 md:p-12 overflow-y-auto bg-white/[0.01] custom-scrollbar-ai"
               id="ai-insights-panel"
             >
               <div className="flex items-center gap-2 mb-10 text-indigo-400">
