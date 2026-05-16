@@ -26,16 +26,29 @@
 }
 
 @layer utilities {
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.12) rgba(255,255,255,0.02);
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
+    width: 10px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    background: rgba(255,255,255,0.02);
+    border-radius: 9999px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+    background: rgba(255,255,255,0.12);
+    border-radius: 9999px;
+    border: 2px solid rgba(0,0,0,0);
+    transition: background-color .15s;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.18);
   }
 }
 
