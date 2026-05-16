@@ -1,104 +1,142 @@
-# Peblo Notes 📝
+# Peblo Notes — Professional README
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![React](https://img.shields.io/badge/React-19.0-blue)](https://reactjs.org/)
-[![Firebase](https://img.shields.io/badge/Firebase-12.0-orange)](https://firebase.google.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-cyan)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![React](https://img.shields.io/badge/React-19.0-blue)](https://reactjs.org/) [![Firebase](https://img.shields.io/badge/Firebase-12.0-orange)](https://firebase.google.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-cyan)](https://tailwindcss.com/)
 
-**Peblo Notes** is a high-performance, AI-driven workspace designed for modern engineering teams and creative thinkers. It combines the power of real-time sync with advanced intelligence analysis to help you turn scattered thoughts into structured action.
+Peblo Notes is an opinionated, performance-first workspace for engineering teams and knowledge workers. It combines real-time synchronization, a focused editor, and an AI-powered intelligence panel to help teams craft, refine, and act on knowledge faster.
 
 ---
 
-## ✨ Features
+## Overview
 
-- 🚀 **Real-time Collaboration**: Powered by Firebase for instant synchronization across all devices.
-- 🧠 **AI Intelligence Sidebar**: Generate smart summaries, extract action items, and get insights from your notes instantly.
-- 📊 **Productivity Metrics**: Visualize your workspace output with the Registry Pulse dashboard.
-- 🎨 **Sleek Interface**: A bespoke dark-mode UI built with glassmorphism, fluid animations (Motion), and precision typography.
-- 🔍 **Global Search**: Find any document in milliseconds with optimized indexing.
-- 🏷️ **Tag Management**: Organize your work with a flexible, hash-based tagging system.
+Peblo is built to support the entire content lifecycle — from quick capture to structured deliverables. It emphasizes reliability, privacy (via Firebase security rules), and practical intelligence: extractable summaries, suggested next steps, and productivity analytics that surface actionable patterns.
 
----
-
-## 📸 Screenshots
-
-> **Note**: These are high-fidelity mockups representing the core UI experience.
-
-### 1. The Workspace
-![Workspace Dashboard](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
-*A minimalist dashboard designed for focus and clarity.*
-
-### 2. AI-Powered Insights
-![Intelligence Panel](https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
-*Real-time analysis and summary extraction side-by-side with your editor.*
-
-### 3. Productivity Metrics
-![Analytics Dashboard](https://images.unsplash.com/photo-1551288049-bbbda5366391?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
-*Visualizing your weekly output and intelligence trends.*
+Core use cases:
+- Team documentation and design notes
+- Research notes and evidence tracking
+- Meeting summaries and action item extraction
+- Personal knowledge management for engineers and product teams
 
 ---
 
-## 🛠️ Tech Stack
+## Key Features
 
-- **Frontend**: React 19, TypeScript, Vite
-- **Styling**: Tailwind CSS 4, Motion (formerly Framer Motion)
-- **Backend**: Firebase Firestore (NoSQL), Firebase Auth
-- **AI**: Gemini Pro (via SDK)
-- **Icons**: Lucide React
-- **Formatting**: React Markdown
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v18+)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/peblo-notes.git
-   cd peblo-notes
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Environment Setup**:
-   Create a `.env` file in the root directory and add your keys (refer to `.env.example`):
-   ```env
-   VITE_FIREBASE_API_KEY=your_key
-   GEMINI_API_KEY=your_key
-   ```
-
-4. **Launch the development server**:
-   ```bash
-   npm run dev
-   ```
+- Real-time sync with Firebase Firestore and presence indicators
+- AI-driven `Intelligence` sidebar for summaries, action items, and next steps
+- Lightweight, fast editor optimized for long-form technical writing
+- Tagging, search, and document scaffolding for discoverability
+- Clean dark-first UI built with Tailwind CSS and Motion for subtle animations
+- Deploy-ready Vite build and GitHub Pages support
 
 ---
 
-## 📄 License
+## Architecture & Files
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- Frontend: React + TypeScript (Vite)
+- Styling: Tailwind CSS v4, small utility layer for custom scrollbars
+- Backend: Firebase Auth + Firestore (security rules in `firestore.rules`)
+- AI: Gemini integration (see `src/lib/gemini.ts`)
+- Important files:
+  - `src/components/AuthPrompt.tsx` — auth landing / login modal
+  - `src/components/Logo.tsx` — wordmark component used across the app
+  - `vite.config.ts` — Vite configuration and deploy base
+  - `public/` — static assets and the `screenshots/` folder used by this README
 
 ---
 
-*Built with ❤️ for the future of knowledge management.*
+## Screenshots
+
+The following screenshots are provided at equal sizes for presentation and documentation. Each image is centered and scaled to the same aspect ratio to ensure consistent display across README renderers.
+
+### Auth / Landing
+![Auth Page](public/screenshots/auth.svg)
+*The auth modal: large Peblo wordmark with a blue dot, center-aligned CTA.*
+
+### Workspace Overview
+![Workspace](public/screenshots/workspace.svg)
+*Three-column workspace: sidebar, notes list, and editor pane.*
+
+### Intelligence Panel
+![Intelligence](public/screenshots/intelligence.svg)
+*AI-powered insights and extracted summary shown beside the editor.*
+
+---
+
+## Local Development
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/peblo-notes.git
+cd peblo-notes
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Add environment variables. Create a `.env` file (see `.env.example`):
+
+```env
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+GEMINI_API_KEY=your_gemini_key
+```
+
+4. Start the dev server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## Deployment
+
+This project is set up to deploy to GitHub Pages. Key points:
+
+- `vite.config.ts` uses a relative `base: './'` to ensure pages work from subpaths.
+- We recommend the GitHub Actions workflow to perform a clean install during CI to avoid optional native-binding issues: remove `node_modules` and `package-lock.json`, run `npm cache clean --force`, then `npm install --no-package-lock`.
+
+---
+
+## Contributing
+
+Contributions are welcome. Please follow these steps:
+
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit changes with clear messages
+4. Open a Pull Request to `main`
+
+Please run `npm run build` locally and ensure no TypeScript or lint errors before submitting.
+
+---
+
+## Security & Privacy
+
+- Do not commit secrets. Use environment variables and GitHub Actions secrets for CI.
+- Firebase rules are enforced via `firestore.rules` — review them before updating permissions.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE` for details.
+
+---
+
+If you'd like I can:
+- Replace the placeholder screenshots with production screenshots you provide
+- Adjust the headings, typography, or add a live demo badge linking to your Pages site
+- Commit and push these changes and open a Pull Request
+
+Thank you — let me know which next step you want. 

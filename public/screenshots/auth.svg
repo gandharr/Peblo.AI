@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <rect width="1200" height="360" fill="#0b0b0f"/>
+  <rect x="300" y="40" width="600" height="280" rx="40" fill="#18181b" stroke="#2b2b2f" stroke-width="2"/>
+  <text x="600" y="120" font-family="Inter, Arial, sans-serif" font-size="48" fill="#ffffff" font-weight="700" text-anchor="middle">Peblo<span fill="#6366f1">.</span></text>
+  <text x="600" y="180" font-family="Inter, Arial, sans-serif" font-size="16" fill="#9ca3af" text-anchor="middle">A high-performance workspace for modern creative documentation and collaborative research.</text>
+  <rect x="420" y="220" width="360" height="56" rx="12" fill="#fff"/>
+  <text x="600" y="258" font-family="Inter, Arial, sans-serif" font-size="16" fill="#000" text-anchor="middle">Continue with Google</text>
+</svg>

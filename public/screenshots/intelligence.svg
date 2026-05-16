@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <rect width="1200" height="360" fill="#0b0b0f"/>
+  <rect x="640" y="24" width="520" height="312" rx="20" fill="#0f0f12" stroke="#232325"/>
+  <text x="900" y="60" font-family="Inter, Arial, sans-serif" font-size="20" fill="#6366f1" font-weight="700" text-anchor="middle">Intelligence</text>
+  <rect x="688" y="92" width="416" height="76" rx="12" fill="#161617" stroke="#2b2b2f"/>
+  <text x="900" y="140" font-family="Inter, Arial, sans-serif" font-size="14" fill="#9ca3af" text-anchor="middle">"This document outlines the foundational objective of providing a clear and technical definition."</text>
+</svg>

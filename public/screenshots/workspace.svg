@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <rect width="1200" height="360" fill="#0b0b0f"/>
+  <g transform="translate(28,28)">
+    <rect x="0" y="0" width="240" height="304" rx="24" fill="#0f0f12" stroke="#232325"/>
+    <rect x="260" y="0" width="320" height="304" rx="24" fill="#0f0f12" stroke="#232325"/>
+    <rect x="600" y="0" width="576" height="304" rx="24" fill="#0f0f12" stroke="#232325"/>
+    <text x="120" y="40" font-family="Inter, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700" text-anchor="middle">Peblo<span fill="#6366f1">.</span></text>
+    <text x="420" y="40" font-family="Inter, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700" text-anchor="middle">Workspace</text>
+    <text x="888" y="40" font-family="Inter, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700" text-anchor="middle">Editor</text>
+  </g>
+</svg>
