@@ -1,8 +1,8 @@
-# Peblo Notes — Professional README
+# Peblo AI — Professional README
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![React](https://img.shields.io/badge/React-19.0-blue)](https://reactjs.org/) [![Firebase](https://img.shields.io/badge/Firebase-12.0-orange)](https://firebase.google.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-cyan)](https://tailwindcss.com/)
 
-Peblo Notes is an opinionated, performance-first workspace for engineering teams and knowledge workers. It combines real-time synchronization, a focused editor, and an AI-powered intelligence panel to help teams craft, refine, and act on knowledge faster.
+Peblo AI is an opinionated, performance-first workspace for engineering teams and knowledge workers. It combines real-time synchronization, a focused editor, and an AI-powered intelligence panel to help teams craft, refine, and act on knowledge faster.
 
 ---
 
@@ -69,8 +69,8 @@ The following screenshots are provided at equal sizes for presentation and docum
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/peblo-notes.git
-cd peblo-notes
+git clone https://github.com/your-username/peblo-ai.git
+cd peblo-ai
 ```
 
 2. Install dependencies:
