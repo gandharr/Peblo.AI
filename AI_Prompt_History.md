@@ -10,7 +10,6 @@ This document records the user prompts and assistant actions made while developi
 - Vite base / GitHub Pages white-screen debugging
 - UI tweaks (logo, favicon, scrollbars, layout)
 - Feature stubs and later reverts (autosave, archive, filtering)
-- Documentation request: write full prompt history (this file)
 
 --- Chronological Prompt Log (condensed) ---
 
