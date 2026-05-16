@@ -32,6 +32,8 @@ export default function Dashboard() {
   const [notes, setNotes] = useState<Note[]>([]);
   const [activeNoteId, setActiveNoteId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [filterArchived, setFilterArchived] = useState<'all'|'active'|'archived'>('all');
+  const [sortBy, setSortBy] = useState<'updatedAt'|'title'>('updatedAt');
   const [activeTab, setActiveTab] = useState('notes');
   const [isGenerating, setIsGenerating] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -61,11 +63,19 @@ export default function Dashboard() {
   }, [user]);
 
   const filteredNotes = useMemo(() => {
-    return notes.filter(n => 
-      n.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      n.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      n.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
-    );
+    return notes.filter(n => {
+      if (filterArchived === 'active' && n.isArchived) return false;
+      if (filterArchived === 'archived' && !n.isArchived) return false;
+      const matchesQuery = n.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        n.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        n.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesQuery;
+    }).sort((a,b) => {
+      if (sortBy === 'updatedAt') {
+        return (b.updatedAt?.toDate?.() ? b.updatedAt.toDate().getTime() : 0) - (a.updatedAt?.toDate?.() ? a.updatedAt.toDate().getTime() : 0);
+      }
+      return a.title.localeCompare(b.title);
+    });
   }, [notes, searchQuery]);
 
   const activeNote = useMemo(() => 
