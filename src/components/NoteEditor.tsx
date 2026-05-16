@@ -124,7 +124,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
               onClick={() => {
                 const isPublic = !note.isPublic;
                 onSave({ isPublic });
-                
+
                 if (isPublic) {
                   const url = new URL(window.location.href);
                   url.searchParams.set('share', note.id);
@@ -148,6 +148,20 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
             >
               <Share2 className="w-4 h-4" />
               {note.isPublic && <ExternalLink className="w-3 h-3" />}
+            </button>
+            <button
+              onClick={() => {
+                const isArchived = !note.isArchived;
+                setSavingStatus('saving');
+                Promise.resolve(onSave({ isArchived })).then(() => {
+                  setSavingStatus('saved');
+                  setTimeout(() => setSavingStatus('idle'), 1200);
+                }).catch(() => setSavingStatus('error'));
+              }}
+              className={cn("p-2 rounded-lg transition-all text-white/20 hover:text-white/40")}
+              title={note.isArchived ? 'Unarchive' : 'Archive'}
+            >
+              <Archive className="w-4 h-4" />
             </button>
             <button
               onClick={() => onDelete(note.id)}
