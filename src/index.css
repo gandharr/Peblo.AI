@@ -26,9 +26,10 @@
 }
 
 @layer utilities {
+  /* Default: dark thumb for light backgrounds */
   .custom-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.12) rgba(255,255,255,0.02);
+    scrollbar-color: rgba(0,0,0,0.35) rgba(0,0,0,0.06);
   }
 
   .custom-scrollbar::-webkit-scrollbar {
@@ -41,13 +42,35 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.35);
     border-radius: 9999px;
     border: 2px solid rgba(0,0,0,0);
     transition: background-color .15s;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.5);
+  }
+
+  /* Inverse: light thumb for dark backgrounds */
+  .custom-scrollbar-inverse {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.12) rgba(255,255,255,0.02);
+  }
+
+  .custom-scrollbar-inverse::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.02);
+    border-radius: 9999px;
+  }
+
+  .custom-scrollbar-inverse::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.12);
+    border-radius: 9999px;
+    border: 2px solid rgba(0,0,0,0);
+    transition: background-color .15s;
+  }
+
+  .custom-scrollbar-inverse::-webkit-scrollbar-thumb:hover {
     background: rgba(255,255,255,0.18);
   }
 }

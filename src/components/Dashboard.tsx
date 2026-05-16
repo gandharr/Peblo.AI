@@ -201,7 +201,7 @@ export default function Dashboard() {
                 </p>
               </div>
               
-              <div className={`flex-1 ${filteredNotes.length > 0 ? 'overflow-y-auto custom-scrollbar' : 'overflow-hidden'} p-3 space-y-1.5`}>
+              <div className={`flex-1 ${filteredNotes.length > 0 ? 'overflow-y-auto custom-scrollbar custom-scrollbar-inverse' : 'overflow-hidden'} p-3 space-y-1.5`}>
                 {filteredNotes.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center opacity-20 px-6 text-center">
                     <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
@@ -298,7 +298,7 @@ export default function Dashboard() {
 
         {/* AI Insights Board */}
         {activeTab === 'insights' && (
-          <div className="flex-1 bento-card p-4 md:p-12 overflow-y-auto custom-scrollbar">
+          <div className="flex-1 bento-card p-4 md:p-12 overflow-y-auto custom-scrollbar custom-scrollbar-inverse">
             <header className="mb-10">
               <h1 className="text-2xl font-bold tracking-tight mb-1">AI Summaries</h1>
               <p className="text-white/30 text-sm font-medium">Consolidated intelligence across your workspace.</p>

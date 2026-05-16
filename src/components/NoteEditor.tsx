@@ -157,7 +157,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
       {/* Content Area */}
       <main className="flex-1 overflow-hidden flex flex-col lg:flex-row">
         {/* Main Editor */}
-        <div className="flex-1 overflow-y-auto p-6 md:p-12 lg:pr-6 custom-scrollbar h-full bg-white/[0.01]">
+        <div className="flex-1 overflow-y-auto p-6 md:p-12 lg:pr-6 custom-scrollbar custom-scrollbar-inverse h-full bg-white/[0.01]">
           <div className="max-w-3xl mx-auto">
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-8">
