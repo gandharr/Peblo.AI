@@ -19,7 +19,7 @@ export default function AuthPrompt() {
         <div className="mb-10 flex justify-center">
           <Logo />
         </div>
-        <h1 className="text-3xl font-bold text-white mb-3 tracking-tight">Peblo</h1>
+        <h1 className="text-xl font-bold text-white mb-3 tracking-tight">Peblo</h1>
         <p className="text-white/40 mb-10 font-medium leading-relaxed text-sm">
           A high-performance workspace for modern creative documentation and collaborative research.
         </p>
