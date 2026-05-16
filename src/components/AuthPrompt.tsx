@@ -16,10 +16,9 @@ export default function AuthPrompt() {
         className="w-full max-w-md bg-white/5 backdrop-blur-2xl rounded-[2.5rem] md:rounded-[3rem] border border-white/10 p-8 md:p-12 text-center shadow-2xl relative z-10"
         id="auth-modal"
       >
-        <div className="mb-10 flex justify-center">
-          <Logo />
+        <div className="mb-6 flex justify-center">
+          <Logo sizeClass={"text-4xl md:text-5xl"} />
         </div>
-        <h1 className="text-2xl font-bold text-white mb-3 tracking-tight">Peblo</h1>
         <p className="text-white/40 mb-10 font-medium leading-relaxed text-sm">
           A high-performance workspace for modern creative documentation and collaborative research.
         </p>
