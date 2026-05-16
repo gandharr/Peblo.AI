@@ -174,6 +174,15 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
         </div>
       </header>
 
+      {/* Autosave indicator */}
+      <div className="px-4 md:px-8 mt-1">
+        <div className="text-[11px] text-white/30">
+          {savingStatus === 'saving' && 'Saving...'}
+          {savingStatus === 'saved' && 'All changes saved'}
+          {savingStatus === 'error' && 'Save failed'}
+        </div>
+      </div>
+
       {/* Content Area */}
       <main className="flex-1 overflow-hidden flex flex-col lg:flex-row">
         {/* Main Editor */}
