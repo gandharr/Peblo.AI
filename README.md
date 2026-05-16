@@ -1,4 +1,4 @@
-# Peblo AI — Professional README
+# Peblo AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![React](https://img.shields.io/badge/React-19.0-blue)](https://reactjs.org/) [![Firebase](https://img.shields.io/badge/Firebase-12.0-orange)](https://firebase.google.com/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-cyan)](https://tailwindcss.com/)
 
