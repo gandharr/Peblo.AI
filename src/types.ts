@@ -14,6 +14,7 @@ export interface Note {
   title: string;
   content: string;
   tags: string[];
+  isArchived?: boolean;
   summary?: string;
   actionItems?: string[];
   isPublic: boolean;

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <rect width="1200" height="600" fill="#0b0b0f"/>
+  <g fill="#111214" stroke="#222" stroke-width="1">
+    <rect x="60" y="80" width="300" height="160" rx="18"/>
+    <rect x="420" y="80" width="360" height="160" rx="18"/>
+    <rect x="820" y="80" width="300" height="160" rx="18"/>
+    <rect x="60" y="280" width="300" height="160" rx="18"/>
+    <rect x="420" y="280" width="700" height="160" rx="18"/>
+  </g>
+  <text x="120" y="120" fill="#fff" font-size="20" font-weight="700">Client (React + Vite)</text>
+  <text x="480" y="120" fill="#fff" font-size="20" font-weight="700">AI Service (Gemini)</text>
+  <text x="880" y="120" fill="#fff" font-size="20" font-weight="700">Auth / Firestore</text>
+  <text x="120" y="320" fill="#fff" font-size="20" font-weight="700">Optional Express API</text>
+  <text x="480" y="320" fill="#fff" font-size="20" font-weight="700">Storage / Files / Analytics</text>
+  <g stroke="#6366f1" fill="#6366f1">
+    <circle cx="600" cy="50" r="4"/>
+  </g>
+  <text x="40" y="40" fill="#fff" font-size="24" font-weight="800">Peblo AI — Architecture</text>
+</svg>

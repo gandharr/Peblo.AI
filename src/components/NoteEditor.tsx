@@ -40,6 +40,7 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
   const [localTags, setLocalTags] = useState<string[]>(note.tags || []);
   const [tagInput, setTagInput] = useState('');
   const [previewMode, setPreviewMode] = useState(false);
+  const [savingStatus, setSavingStatus] = useState<'idle'|'saving'|'saved'|'error'>('idle');
   const saveTimeout = useRef<NodeJS.Timeout|null>(null);
 
   useEffect(() => {
@@ -53,11 +54,16 @@ export default function NoteEditor({ note, onSave, onDelete, onClose, onGenerate
     
     saveTimeout.current = setTimeout(() => {
       if (localTitle !== note.title || localContent !== note.content || JSON.stringify(localTags) !== JSON.stringify(note.tags)) {
-        onSave({ 
+        setSavingStatus('saving');
+        const result = Promise.resolve(onSave({ 
           title: localTitle, 
           content: localContent,
           tags: localTags
-        });
+        }));
+        result.then(() => {
+          setSavingStatus('saved');
+          setTimeout(() => setSavingStatus('idle'), 1200);
+        }).catch(() => setSavingStatus('error'));
       }
     }, 1000);
 

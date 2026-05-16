@@ -44,6 +44,7 @@ service cloud.firestore {
           && note.content is string && note.content.size() <= 100000
           && note.tags is list && note.tags.size() <= 20
           && note.isPublic is bool
+          && (note.get('isArchived', false) is bool)
           && note.shareId is string && note.shareId.size() <= 128
           && (note.get('summary', null) == null || (note.summary is string && note.summary.size() <= 2500))
           && (note.get('actionItems', null) == null || (note.actionItems is list && note.actionItems.size() <= 50));
